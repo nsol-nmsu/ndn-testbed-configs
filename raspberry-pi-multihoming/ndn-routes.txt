@@ -1,0 +1,15 @@
+nsol0
+--------------------------------------
+Prefix          Gateway         Cost
+/nsol           local           0
+
+nsol1
+--------------------------------------
+Prefix          Gateway         Cost
+/nsol           nsol0           10
+
+raspberry-pi
+--------------------------------------
+Prefix          Gateway         Cost
+/nsol           nsol1           10
+/nsol           nsol0           30

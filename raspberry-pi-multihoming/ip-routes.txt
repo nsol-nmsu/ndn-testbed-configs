@@ -1,0 +1,17 @@
+nsol0
+------------------------------------------
+Prefix          Gateway         Interface
+10.1.0.0/16     -               eth1
+
+nsol1
+------------------------------------------
+Prefix          Gateway         Interface
+10.1.0.0/16     -               eth1
+10.2.0.0/16     -               eth0
+
+raspberry-pi
+------------------------------------------
+Prefix          Gateway         Interface
+10.1.0.0/16     -               wlan0
+10.2.0.0/16     -               eth0
+0.0.0.0/0       10.1.0.1        wlan0
