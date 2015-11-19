@@ -15,7 +15,6 @@ NDN_CONF=$HOME/ndn/ndn-testbed-configs/raspberry-pi-multihoming
 
 # copy nfd config, make nlsr's required directories
 cp -f $NDN_CONF/nfd.conf $NDN_ROOT/etc/ndn/nfd.conf
-mkdir -p /var/log/nlsr /var/lib/nlsr
 
 # set paths...
 export PATH=$PATH:$NDN_ROOT/bin
@@ -26,7 +25,9 @@ if ! ndnsec-get-default &>/dev/null ; then
   ndnsec-keygen /localhost/operator | ndnsec-install-cert -
 fi
 
-# start nfd and nlsr
-nfd &
+# start nfd
+nfd 2>&1 > $NDN_CONF/${HOSTNAME}_nfd.log &
 sleep 1
-nlsr -f $NDN_CONF/$HOSTNAME-nlsr.conf &
+
+# configure nfd / start services
+source ${HOSTNAME}-setup.txt
