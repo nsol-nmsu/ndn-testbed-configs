@@ -26,7 +26,7 @@ if ! ndnsec-get-default &>/dev/null ; then
 fi
 
 # start nfd
-nfd 2>&1 > $NDN_CONF/${HOSTNAME}_nfd.log &
+nfd >$NDN_CONF/${HOSTNAME}_nfd.log 2>&1 &
 sleep 1
 
 # configure nfd / start services
