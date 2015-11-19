@@ -1,0 +1,2 @@
+nfdc register -c 10 /ndn/nsol udp4://10.2.0.1
+nfdc register -c 30 /ndn/nsol udp4://10.1.0.1
