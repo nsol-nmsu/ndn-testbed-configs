@@ -1,1 +1,3 @@
+nlsr -d -f $NDN_CONF/nsol0-nlsr.conf
 ndnpingserver /ndn/nsol/test 2>&1 >/dev/null &
+
