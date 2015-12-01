@@ -1,2 +1,1 @@
-nlsr -d -f $NDN_CONF/nsol1-nlsr.conf
-#nfdc register -c 10 /ndn/nsol udp4://10.1.0.1
+nlsr -d -f $NDN_CONF/$HOSTNAME-nlsr.conf
